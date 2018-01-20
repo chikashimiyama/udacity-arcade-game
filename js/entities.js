@@ -71,8 +71,8 @@ class Rival extends ReactiveEntity{
 	}
 
 	update(dt) {
-		this.x -=0.1;
-		this.y -=0.4;
+		this.x -= 1 * dt;
+		this.y -= 4 * dt;
 	}
 
 }
@@ -96,7 +96,7 @@ class Footman extends ReactiveEntity{
 	}
 
 	update(dt) {
-		this.y += this.move;
+		this.y += this.move  * dt;
 		if(this.y > (CANVAS_HEIGHT - VERTICAL_STEP)){
 			this.randomX();
 			this.randomSpeed();
@@ -109,7 +109,7 @@ class Footman extends ReactiveEntity{
 	}
 
 	randomSpeed(){
-		this.move = Math.random() * 5 + 4;
+		this.move = Math.random() * 300 + 300;
 	}
 
 }
@@ -119,15 +119,15 @@ class HouseKeeper extends ReactiveEntity{
 
 	constructor(x, y){
 		super("images/char-pink-girl.png", x, y);
-		this.move = 4;
+		this.move = 600;
 	}
 
 	update(dt) {
-		this.x += this.move;
+		this.x += this.move  * dt;
 		if(this.x > (CANVAS_WIDTH - HORIZONTAL_STEP)){
-			this.move = -(Math.random() * 4 + 4);
+			this.move = -(Math.random() * 400 + 300);
 		} else if( this.x < 0) {
-			this.move = Math.random() * 4 + 4;
+			this.move = Math.random() * 400 + 300;
 		}
 	}
 
