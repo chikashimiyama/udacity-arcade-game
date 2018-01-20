@@ -1,5 +1,7 @@
 # Classic Arcade Game
 
+## Play it now!
+[Play!](https://chikashimiyama.github.io/udacity-arcade-game/)
 
 ## What is this repo?
 
