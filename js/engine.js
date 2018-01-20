@@ -137,7 +137,7 @@ class Engine{
         this.animate = false;
         this.soundPlayer.stop('bgm');
         this.soundPlayer.play( success ? 'won' : 'lost');
-        this.message.innerHTML = success ? 'accomplisehd' : 'failed';
+        this.message.innerHTML = success ? 'accomplished' : 'failed';
         setTimeout(()=>{
             this.result.classList.add('show');
         }, 1000);
