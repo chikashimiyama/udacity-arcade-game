@@ -1,7 +1,9 @@
 /*jshint esversion: 6 */
 
+// simple bgm player
 class SoundPlayer{
 
+	// store the element
 	constructor(){
 		this.soundbank = {
 			bgm : document.querySelector('.bgm'),
@@ -10,11 +12,15 @@ class SoundPlayer{
 		};
 	}
 
+	// start playing song
 	play(song){
 		this.soundbank[song].play();
 	}
 
+	// stop the specified song and rewind
 	stop(song){
 		this.soundbank[song].pause();
+		this.soundbank[song].currentTime = 0;
 	}
+	
 }
