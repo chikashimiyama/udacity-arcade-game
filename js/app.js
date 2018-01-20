@@ -1,39 +1,34 @@
-// Enemies our player must avoid
-var Enemy = function() {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
-
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
-};
-
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
-};
-
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
-
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
+/*jshint esversion: 6 */
 
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
+const CANVAS_WIDTH = 505;
+const CANVAS_HEIGHT = 606;
+const NUM_ROWS= 6;
+const NUM_COLS = 5;
+const COLLISION_THRESHOLD = 40;
+const HORIZONTAL_STEP = 101;
+const VERTICAL_STEP = 83;
+const VERTICAL_OFFSET = -20;
+const ROW_IMAGES = [
+	'images/grass-block.png',
+	'images/stone-block.png',
+	'images/water-block.png',
+	'images/stone-block.png',
+	'images/grass-block.png',
+	'images/grass-block.png' 
+];
 
 
+const player = new Player(HORIZONTAL_STEP * 1, VERTICAL_STEP *  5 + VERTICAL_OFFSET );
+const princess = new Princess(HORIZONTAL_STEP * 2, VERTICAL_OFFSET);
+const allEnemies = [
+	new Rival(HORIZONTAL_STEP * 3, VERTICAL_STEP *  5 + VERTICAL_OFFSET),
+	new Footman(HORIZONTAL_STEP * 1, VERTICAL_OFFSET),
+	new Footman(HORIZONTAL_STEP * 3, VERTICAL_OFFSET),
+	new HouseKeeper(0, VERTICAL_STEP * 3 + VERTICAL_OFFSET),
+	new HouseKeeper(HORIZONTAL_STEP * 4, VERTICAL_STEP + VERTICAL_OFFSET)];
+const engine = new Engine();
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
@@ -44,3 +39,4 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
