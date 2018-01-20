@@ -3,26 +3,27 @@
 
 ## What is this repo?
 
-A simple emulation of classical arcade game with javascript
-
-## Why did I make this?
-
-A project assigned by Udacity Nanodegree "Frontend Developer"
+A simple of classical arcade game coded with javascript
 
 ## How to run?
 
 Simply download the repo and open index.html
 
-## How to play?
+## Game Story and your mission
 
-You are the notorius villan, Lady Horn.
-Your mission is to kidnap the princess, dodging the attacks by her footmen,  housekeepers, and rival villains, Lady cat.
+The princess asked a lady thief to kidnap her in order to annul the marriage she doesn't want.
 
-You can accomplish the mission, if you can catch the princess without being caught by enemies (footmen, housekeepers and Lady cat). If Lady cat reaches the princess before you catch her, the mission fails.
+Your mission as **Lady Horn** a notorious thief is to acquire the princess, dodging the attacks by her footmen, housekeepers, and your rival villain, **Lady Cat**.
+
+You can accomplish the mission, if you can acquire the princess without being caught by enemies (footmen, housekeepers and Lady Cat). If Lady Cat catches the princess before you reaches her, the mission also fails.
+
+![](images/screen.png)
 
 ## Dependencies?
 
-NO dependencies but it uses ES6. A modern browser is required.
+No dependencies.
+The application is transpiled with Babel.js.
+All ES5 compatible browser can run the game without any problem.
 
 ## Lincese
 
